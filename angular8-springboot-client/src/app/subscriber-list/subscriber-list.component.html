@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Subscriber List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let subscriber of subscribers | async">
+            <td>{{subscriber.firstName}}</td>
+            <td>{{subscriber.lastName}}</td>
+            <td>{{subscriber.emailId}}</td>
+            <td><button (click)="deleteSubscriber(subscriber.id)" class="btn btn-danger">Delete</button>
+                <button (click)="subscriberDetails(subscriber.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
